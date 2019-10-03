@@ -16,6 +16,7 @@
     "@nuxtjs/axios": "^5.3.6",
     "@nuxtjs/pwa": "^3.0.0-0",
     "nuxt": "^2.0.0",
+    "rupture": "^0.7.1",
     "stylus": "^0.54.7",
     "stylus-loader": "^3.0.2",
     "vue-select": "^3.2.0"
