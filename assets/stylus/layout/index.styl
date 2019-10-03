@@ -1,0 +1,23 @@
+.index
+  padding 40px 32px
+  .search
+    margin-bottom 48px
+  .v-select
+    margin-bottom 48px
+    width 208px
+  .card
+    margin 0 auto 40px
+
+  +above(768px)
+    padding 40px 64px
+    .input-wrappers
+      display flex
+      justify-content space-between
+      .search
+        width 400px
+    .card-wrappers
+      .card
+        width 100%
+      display grid
+      grid-template-columns repeat(4, 1fr);
+      grid-column-gap 64px
