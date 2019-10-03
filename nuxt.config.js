@@ -14,6 +14,9 @@ export default {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
       { href: 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,600,800&display=swap', rel: 'stylesheet' }
+    ],
+    script: [
+      { src: 'https://unpkg.com/ionicons@4.5.10-0/dist/ionicons.js' }
     ]
   },
   /*
@@ -24,7 +27,8 @@ export default {
   ** Global CSS
   */
   css: [
-    '@/assets/stylus/main.styl'
+    '@/assets/stylus/main.styl',
+    { src: 'vue-select/dist/vue-select.css' }
   ],
   /*
   ** Plugins to load before mounting the App
