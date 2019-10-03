@@ -12,7 +12,8 @@ export default {
       { hid: 'description', name: 'description', content: process.env.npm_package_description || '' }
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      { href: 'https://fonts.googleapis.com/css?family=Nunito+Sans:300,600,800&display=swap', rel: 'stylesheet' }
     ]
   },
   /*
@@ -23,6 +24,7 @@ export default {
   ** Global CSS
   */
   css: [
+    '@/assets/stylus/main.styl'
   ],
   /*
   ** Plugins to load before mounting the App
