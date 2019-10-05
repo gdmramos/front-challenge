@@ -34,10 +34,12 @@ export default {
   },
   computed: {
     countries () {
-      if (this.$store.state.selectedFilter === null) {
+      if (this.$store.state.regionFilter === null && this.$store.state.countryFilter === '') {
         return this.$store.state.countriesList
+      } else if (this.$store.state.countryFilter) {
+        return this.$store.state.countriesList.filter(country => country.name.toLowerCase().includes(this.$store.state.countryFilter.toLowerCase()))
       } else {
-        return this.$store.state.countriesList.filter(country => country.region === this.$store.state.selectedFilter)
+        return this.$store.state.countriesList.filter(country => country.region === this.$store.state.regionFilter)
       }
     }
   },
@@ -50,9 +52,6 @@ export default {
         this.$store.dispatch('fetchList')
       }
     }
-    // async getCountries () {
-    //   this.countries = await this.$axios.$get('/all?fields=name;region;population;capital;flag')
-    // }
   }
 }
 </script>
