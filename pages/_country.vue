@@ -1,5 +1,5 @@
 <template>
-  <div class="country">
+  <div class="country main">
     <div class="country-button">
       <v-button path="/" class="back-button">
         <ion-icon name="arrow-back" />
@@ -28,7 +28,12 @@
       <div class="country-borders-wrapper">
         <h3>Border Countries:</h3>
         <div class="country-content-borders">
-          <v-button v-for="border in bordersComputed" :key="border.name">
+          <v-button
+            v-for="(border, index) in bordersComputed"
+            :key="border.name"
+            :path="`/${border.name}`"
+            @click="setBorderSelectedCountry(index)"
+          >
             <span>{{ border.name }}</span>
           </v-button>
         </div>
@@ -85,6 +90,9 @@ export default {
   methods: {
     getBorders () {
       this.$store.dispatch('fetchBorders', this.countryComputed.borders)
+    },
+    setBorderSelectedCountry (index) {
+      this.$store.commit('setBorderSelectedCountry', index)
     }
   }
 }
