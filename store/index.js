@@ -48,12 +48,14 @@ export const actions = {
       commit('setCountry', data)
       commit('setCountryIsLoaded', true)
     }
+  },
+
+  async fetchBorders ({ commit }, borders) {
+    let bordersString = ''
+    borders.forEach((border) => {
+      bordersString.length > 0 ? bordersString = `${bordersString};${border}` : bordersString = border
+    })
+    const data = await this.$axios.$get(`/alpha?codes=${bordersString}`)
+    commit('setBorders', data)
   }
-  // async fetchBorders ({ commit }) {
-  //   const borderArray = []
-  //   countries.forEach((country) => {
-  //     const data = await this.$axios.$get(`/name/${this.$route.params.country}`)
-  //     borderArray.push()
-  //   })
-  // }
 }
