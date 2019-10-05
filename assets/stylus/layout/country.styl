@@ -1,0 +1,50 @@
+.country
+  padding 40px 32px
+  .nuxt-link-active
+    text-decoration none
+    color #000
+  .back-button
+    margin-bottom 64px
+  img
+    margin-bottom 48px
+    width 100%
+  &-content
+    h2
+      margin-bottom 32px
+    p
+      margin-bottom 16px
+      span
+        font-weight 600
+    &-text
+      margin-bottom 48px
+    h3
+      font-weight 600
+      margin-bottom 24px
+    &-borders
+      .button
+        display inline-block
+        font-size 12px
+        margin-right 8px
+        width 88px
+  +above(768px)
+    padding 40px 64px
+    display grid
+    grid-template-columns 1fr 1fr
+    grid-column-gap 112px
+    &-button
+      grid-column-end span 2
+    &-content
+      display flex
+      flex-flow column
+      justify-content center
+      &-wrapper
+        display grid
+        grid-template-columns 1fr 1fr
+    &-borders-wrapper
+      align-items center
+      display flex
+      h3
+        font-size 16px
+        margin 0
+        margin-right 16px
+
