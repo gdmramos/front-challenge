@@ -1,5 +1,5 @@
 <template>
-  <v-select :value="$store.state.selectedFilter" :options="options" placeholder="Filter by Region" @input="setFilter" />
+  <v-select :value="$store.state.regionFilter" :options="options" placeholder="Filter by Region" @input="setRegionFilter" />
 </template>
 <script>
 import vSelect from 'vue-select'
@@ -21,8 +21,8 @@ export default {
     }
   },
   methods: {
-    setFilter (value) {
-      this.$store.commit('setFilter', value)
+    setRegionFilter (value) {
+      this.$store.commit('setRegionFilter', value)
     }
   }
 }
