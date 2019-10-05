@@ -4,7 +4,8 @@ export const state = () => ({
   bordersList: [],
   regionFilter: null,
   countryFilter: '',
-  countryIsLoaded: false
+  countryIsLoaded: false,
+  darkMode: false
 })
 
 export const mutations = {
@@ -28,6 +29,9 @@ export const mutations = {
   },
   setBorderSelectedCountry (state, index) {
     state.selectedCountry = state.bordersList[index]
+  },
+  toggleDarkMode (state, index) {
+    state.darkMode = !state.darkMode
   }
 }
 

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div :class="{dark: darkMode}">
     <new-header />
     <nuxt />
   </div>
@@ -11,6 +11,11 @@ import newHeader from '@/components/Header'
 export default {
   components: {
     newHeader
+  },
+  computed: {
+    darkMode () {
+      return this.$store.state.darkMode
+    }
   }
 }
 </script>
