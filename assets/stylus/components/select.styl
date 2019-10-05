@@ -16,3 +16,24 @@
     top calc(100% + 8px)
     .vs__dropdown-option--highlight
       background $dark-grey
+
+.dark
+  .v-select
+    background-color $dark-blue
+    color $white
+    &.vs--open,
+    .vs__search,
+    .vs__selected
+      background-color $dark-blue
+      color $white
+    .vs__dropdown-menu
+      background-color $dark-blue
+      box-shadow $box-shadow-dark
+      *
+        color $white
+    .vs__actions
+      svg
+        fill $white
+    .vs__dropdown-toggle
+      border none
+      box-shadow $box-shadow-dark

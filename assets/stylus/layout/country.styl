@@ -30,10 +30,10 @@
         font-size 12px
         width 88px
   +above(768px)
-    padding 40px 64px
     display grid
     grid-template-columns 1fr 1fr
     grid-column-gap 112px
+    padding 40px 64px
     &-button
       grid-column-end span 2
     &-content
@@ -51,3 +51,8 @@
         margin 0
         margin-right 16px
 
+.dark
+  .country
+    .back-button
+      background-color $dark-blue
+      color $white

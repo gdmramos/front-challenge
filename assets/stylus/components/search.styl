@@ -2,7 +2,7 @@
   align-items center
   background-color $white
   border-radius 4px
-  box-shadow: $box-shadow
+  box-shadow $box-shadow
   display flex
   padding 16px 24px
   &-icon
@@ -17,3 +17,15 @@
     font-family 'Nunito Sans'
     font-size 14px
     font-weight 600
+
+.dark
+  .search
+    background-color $dark-blue
+    box-shadow $box-shadow-dark
+    &-icon
+      color $white
+    &-input
+      background-color $dark-blue
+      color $white
+      &::placeholder
+        color $white
