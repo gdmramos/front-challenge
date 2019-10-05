@@ -1,15 +1,15 @@
 <template>
   <header>
     <h1>Where in the Word?</h1>
-    <a>
-      <ion-icon name="moon" />
-      Dark Mode
+    <a @click="$store.commit('toggleDarkMode')">
+      <template v-if="(!$store.state.darkMode)">
+        <ion-icon name="moon" />
+        Dark Mode
+      </template>
+      <template v-else>
+        <ion-icon name="sunny" />
+        Light Mode
+      </template>
     </a>
   </header>
 </template>
-
-<script>
-export default {
-
-}
-</script>
