@@ -55,6 +55,7 @@ export default {
   ** See https://axios.nuxtjs.org/options
   */
   axios: {
+    baseURL: 'https://restcountries.eu/rest/v2/'
   },
   /*
   ** Build configuration
