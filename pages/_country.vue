@@ -28,16 +28,8 @@
       <div class="country-borders-wrapper">
         <h3>Border Countries:</h3>
         <div class="country-content-borders">
-          <div>
-            <v-button>
-              <span>France</span>
-            </v-button>
-          </div>
-          <v-button>
-            <span>Germany</span>
-          </v-button>
-          <v-button>
-            <span>Netherlands</span>
+          <v-button v-for="border in bordersComputed" :key="border.name">
+            <span>{{ border.name }}</span>
           </v-button>
         </div>
       </div>
@@ -51,15 +43,12 @@ export default {
   components: {
     vButton
   },
-  data () {
-    return {
-      isLoaded: false,
-      country: []
-    }
-  },
   computed: {
+    isLoaded () {
+      return this.$store.state.countryIsLoaded
+    },
     countryComputed () {
-      return this.country[0]
+      return this.$store.state.selectedCountry[0]
     },
     languagesComputed () {
       let langString = ''
@@ -75,19 +64,27 @@ export default {
       })
       return currencyString
     },
-    computedPopulation () {
-      let populationString = ''
-      populationString = this.countryComputed.population.toString()
-      return populationString
+    bordersComputed () {
+      return this.$store.state.bordersList
+    }
+    // computedPopulation () {
+    //   let populationString = ''
+    //   populationString = this.countryComputed.population.toString()
+    //   return populationString
+    // }
+  },
+  watch: {
+    countryComputed () {
+      this.getBorders()
     }
   },
   created () {
-    this.getCountry()
+    this.$store.commit('setCountryIsLoaded', false)
+    this.$store.dispatch('fetchCountry', this.$route.params.country)
   },
   methods: {
-    async getCountry () {
-      this.country = await this.$axios.$get(`/name/${this.$route.params.country}`)
-      this.isLoaded = true
+    getBorders () {
+      this.$store.dispatch('fetchBorders', this.countryComputed.borders)
     }
   }
 }
