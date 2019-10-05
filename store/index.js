@@ -25,6 +25,9 @@ export const mutations = {
   },
   setCountryIsLoaded (state, data) {
     state.countryIsLoaded = data
+  },
+  setBorderSelectedCountry (state, index) {
+    state.selectedCountry = state.bordersList[index]
   }
 }
 
