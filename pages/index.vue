@@ -1,5 +1,5 @@
 <template>
-  <div class="index">
+  <div class="index main">
     <section class="input-wrappers">
       <search />
       <v-select />
