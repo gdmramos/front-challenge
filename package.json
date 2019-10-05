@@ -1,13 +1,13 @@
 {
   "name": "front-challenge",
   "version": "1.0.0",
-  "description": "T H E  F R O N T - C H A L L E N G E",
+  "description": "T H E - F R O N T - C H A L L E N G E",
   "author": "Gabriel",
   "private": true,
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
+    "build": "ENV_SILENT=true nuxt build",
+    "start": "ENV_SILENT=true nuxt start",
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "test": "jest"
