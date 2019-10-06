@@ -1,6 +1,6 @@
 # front-challenge
 
-> T H E  F R O N T - C H A L L E N G E
+> T H E - F R O N T - C H A L L E N G E
 
 ## Build Setup
 
